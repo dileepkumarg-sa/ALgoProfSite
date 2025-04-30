@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+  <section style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 40px;">
+    
+      <!-- Contact Form -->
+    <div style="flex: 1; min-width: 300px;">
+      <h3>📨 Send Us a Message</h3>
+      <form method="post" style="margin-top: 15px;">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px;" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin-bottom: 10px;" required><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" style="width: 100%; padding: 8px; margin-bottom: 15px;" required></textarea><br>
+
+        <button type="submit" style="background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+          Submit
+        </button>
+      </form>
+    </div>
+
+  </section>
+{% endblock %}

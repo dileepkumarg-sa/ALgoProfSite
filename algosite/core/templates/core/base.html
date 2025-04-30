@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algo Professor</title>
+    <!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 10px 0;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: rgb(9, 9, 9);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #D8125B;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: auto;
+        }
+
+        .logo {
+            font-size: 1.0rem;
+            color: white;
+            font-weight: bold;
+        }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
+  box-sizing: border-box;
+    } 
+    .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 24px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    background-color: #20c05c;
+    text-decoration: none;
+  }
+  .site-footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px 10px; /* Reduced padding */
+  margin-top: 40px;
+  font-size: 0.95rem; /* Slightly smaller font */
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 8px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  vertical-align: middle;
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+}
+
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'img/algo_logo.jpg' %}" alt="Algo Professor" class="site-logo" style="width: 100px; height: auto;">
+          </a>
+             <div>
+               
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'aboutus' %}">About Us</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'products' %}">Products</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Profile</a>
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background: none; border: none; color: #007bff; cursor: pointer;">Logout</button>
+                  </form>
+                  
+
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; {{ now|default:"2025" }} Algo Professor. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+<!-- WhatsApp Chat Button -->
+<a
+  href="https://wa.me/+916303432833"
+  class="whatsapp-float"
+  target="_blank"
+  title="Chat with us on WhatsApp"
+>
+  💬
+</a>
+<script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

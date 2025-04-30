@@ -1,0 +1,93 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="team-section">
+  <h1>Our Team</h1>
+  <p class="subtitle">Meet the experts behind our innovation and success.</p>
+
+  <div class="team-grid">
+    <!-- Team Member 1 -->
+    <div class="team-card">
+      <img src="{% static 'img/DrSatya.jpg' %}" alt="John Doe">
+      <h3>Dr. Satyanaranayana</h3>
+      <p class="title">CEO & Cheif Data Scientist</p>
+      <p>Expert in Agentic AI, LLMs, Deep Learning, and Reinforcement Learning.</p>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="team-card">
+      <img src="{% static 'img/team2.jpg' %}" alt="Jane Smith">
+      <h3>Jane Smith</h3>
+      <p class="title">ML Engineer</p>
+      <p>Specialist in Machine Learning, MLOps & Data Pipelines.</p>
+    </div>
+
+    <!-- Team Member 3 -->
+    <div class="team-card">
+      <img src="{% static 'img/team3.jpg' %}" alt="Raj Mehta">
+      <h3>Raj Mehta</h3>
+      <p class="title">Algorithmic Trader</p>
+      <p>Expert in algo trading, quantitative finance, and market analysis.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.team-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.team-section h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-card h3 {
+  margin-top: 15px;
+  color: #333;
+}
+
+.team-card .title {
+  color: #4CAF50;
+  font-weight: 500;
+  margin: 5px 0 10px;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="courses-section">
+  <h1>Our Courses</h1>
+  <p class="subtitle">We offer expert-led training programs in high-demand domains.</p>
+
+  <div class="courses-grid">
+    <!-- Course 1 -->
+    <div class="course-card">
+      <h3>Artificial Intelligence</h3>
+      <p>
+        Learn core AI concepts including expert systems, neural networks, and decision-making models with hands-on labs.
+      </p>
+      <a href="{% url 'course_detail' course_id=1 %}" class="btn">View Details</a>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="course-card">
+      <h3>Machine Learning</h3>
+      <p>
+        Dive into supervised, unsupervised, and reinforcement learning techniques using Python and popular libraries.
+      </p>
+      <a href="{% url 'course_detail' course_id=2 %}" class="btn">View Details</a>
+    </div>
+
+    <!-- Course 3 -->
+    <div class="course-card">
+      <h3>Algorithmic Trading</h3>
+      <p>
+        Learn how to design, backtest, and deploy trading strategies using real market data and quantitative tools.
+      </p>
+      <a href="{% url 'course_detail' course_id=3 %}" class="btn">View Details</a>
+    </div>
+  </div>
+</div>
+
+<style>
+.courses-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.courses-section h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  color: #444;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.course-card .btn {
+  text-decoration: none;
+  background: #4CAF50;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.course-card .btn:hover {
+  background: #388E3C;
+}
+</style>
+{% endblock %}

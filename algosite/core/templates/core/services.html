@@ -1,0 +1,279 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Guidance Banner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Gradient animated background */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #fdfeff, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #140505;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .banner {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .banner h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff5900;
+    }
+
+    .banner p {
+      font-size: 1.2em;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      text-align: left;
+      padding: 0 10px;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 1.05em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: 2px solid #00ff99;
+    }
+
+    .feature-item i {
+      color: #00ffcc;
+      margin-right: 10px;
+    }
+
+    .extra-section {
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      font-size: 1.1em;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .extra-section strong {
+      color: #ff7300;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .inline-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    .inline-list span {
+      display: flex;
+      align-items: center;
+      font-size: 1.05em;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 6px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      border: 2px solid #00ff99;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .inline-list span::before {
+      content: "🌐";
+      margin-right: 8px;
+    }
+
+    .contact {
+      margin-top: 40px;
+      font-size: 1.2em;
+      background-color: rgba(240, 107, 107, 0.1);
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+      border: 2px solid #00ff99;
+    }
+
+    .contact a {
+      color: #4400ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .detailed-services-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.detailed-services-section h2 {
+  font-size: 2.4em;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.service-detail-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail-card h3 {
+  color: #4CAF50;
+  margin-top: 15px;
+  font-size: 1.4em;
+}
+
+.service-detail-card p {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.icon-circle {
+  background: #e8f5e9;
+  color: #4CAF50;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="detailed-services-section">
+    <h2>More About Our Services</h2>
+    <div class="services-grid">
+      
+      <!-- Agentic AI -->
+      <div class="service-detail-card">
+        <div class="icon-circle">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>Agentic AI</h3>
+        <p>
+          We build autonomous AI agents capable of decision-making, reasoning, and interacting across digital environments. 
+          From research bots to dynamic task solvers, Agentic AI is the future of intelligent automation.
+        </p>
+      </div>
+  
+      <!-- AI Labs -->
+      <div class="service-detail-card">
+        <div class="icon-circle">
+          <i class="fas fa-flask"></i>
+        </div>
+        <h3>Modular AI Labs</h3>
+        <p>
+          Hands-on labs designed for academic institutions and enterprises to learn and experiment with Machine Learning,
+          Deep Learning, NLP, and real-time AI deployment environments.
+        </p>
+      </div>
+  
+      <!-- AI Automation -->
+      <div class="service-detail-card">
+        <div class="icon-circle">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>AI-Powered Automation</h3>
+        <p>
+          Streamline your operations using AI-driven automation workflows — from document processing to customer support.
+          We build scalable solutions to save time and reduce manual effort.
+        </p>
+      </div>
+  
+    </div>
+  </div>
+  
+  <section class="banner">
+    <h2> Complete PhD & Postdoc Guidance in CSE & AI</h2>
+    <p>Struggling with your research in AI, ML, or Data Science? <strong>Algo Professor</strong> provides expert guidance from start to finish — from topic selection to top-tier journal publication.</p>
+
+    <div class="features">
+      <div class="feature-item"><i class="fas fa-check-circle"></i> AI, ML, DL, Reinforcement Learning, Agentic AI</div>
+      <div class="feature-item"><i class="fas fa-check-circle"></i> Computer Vision, LLMs, Blockchain, Data Engineering</div>
+      <div class="feature-item"><i class="fas fa-check-circle"></i> Proposal Writing & Literature Review</div>
+      <div class="feature-item"><i class="fas fa-check-circle"></i> Thesis Writing & Code Implementation</div>
+      <div class="feature-item"><i class="fas fa-check-circle"></i> SCI / Scopus Indexed Journal Publications</div>
+    </div>
+
+    <div class="extra-section">
+      <strong>Clients From:</strong>
+      <div class="inline-list">
+        <span>India</span>
+        <span>Canada</span>
+        <span>USA</span>
+        <span>UK</span>
+        <span>Australia</span>
+        <span>New Zealand (NZ)</span>
+        <span>UAE</span>
+      </div>
+    </div>
+
+    <div class="extra-section">
+      <strong>Already Published In:</strong>
+      <div class="inline-list">
+        <span>Elsevier</span>
+        <span>Springer</span>
+        <span>Taylor and Francis</span>
+        <span>InderScience</span>
+      </div>
+    </div>
+
+    <div class="contact">
+      📩 <strong>Contact Us:</strong> <a href="mailto:ceo@algoprofessor.in">ceo@algoprofessor.in</a>
+    </div>
+  </section>
+
+</body>
+</html>
+{% endblock %}

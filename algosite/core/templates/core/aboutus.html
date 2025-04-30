@@ -1,0 +1,121 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+  
+  <div class="about-content">
+    <div class="about-text">
+  <section style="margin-top: 20px;">
+    <p>
+      <strong>Welcome to Algo Professor</strong> — a hub of innovation, education, and collaboration in Artificial Intelligence and Machine Learning.
+    </p>
+    <p style="margin-top: 15px;">
+      We specialize in developing modular AI labs, offering industry-relevant training, and conducting impactful research and consultancy projects. 
+      Our mission is to bridge the gap between real-world problems and smart AI solutions by empowering students, professionals, and businesses alike.
+    </p>
+  </section>
+
+  <hr style="margin: 30px 0;">
+
+  <section>
+    <b><h1>🎯 Our Mission</h1></b>
+    <p style="margin-top: 10px;">
+      To democratize access to AI tools, knowledge, and practical experience — enabling individuals and organizations to innovate, learn, and grow.
+    </p>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <h1><b>💡 What We Value</b></h1>
+    <ul style="margin-top: 10px; padding-left: 20px; list-style-type: square;">
+      <li>Open innovation and hands-on learning</li>
+      <li>Cutting-edge AI research with real-world applications</li>
+      <li>Community-driven knowledge sharing</li>
+      <li>Integrity, transparency, and collaboration</li>
+    </ul>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <b><h1>👨‍💻 Meet the Team</h1></b>
+    <p style="margin-top: 10px;">
+      Our diverse team consists of AI researchers, software developers, educators, and data scientists — all working together to build a better, more intelligent future.
+    </p>
+    <p style="margin-top: 10px;">
+      <a href="{% url 'team' %}" style="text-decoration: none; color: #2196F3; font-weight: bold;">Learn more about our team →</a>
+    </p>
+  </div>
+</div>
+  </section>
+  <script>
+    lucide.createIcons();
+  </script>
+  <style>
+    .about-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+  
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  
+    .about-header h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+  
+    .about-header p {
+      color: #555;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .about-text {
+      flex: 1 1 55%;
+    }
+  
+    .about-text h2 {
+      color: #4CAF50;
+      margin-top: 20px;
+    }
+  
+    .about-text p {
+      margin: 10px 0;
+      color: #444;
+      line-height: 1.6;
+    }
+  
+    .about-text ul {
+      padding-left: 20px;
+      color: #333;
+    }
+  
+    .about-image {
+      flex: 1 1 40%;
+    }
+  
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+  
+      .about-image, .about-text {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+{% endblock %}
